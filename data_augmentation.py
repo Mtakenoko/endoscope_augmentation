@@ -40,18 +40,25 @@ for count, dir in enumerate(files_dir, 1):
             depth_img_flip_udlr = cv2.flip(depth_img, -1)
 
             # eyemodel_trainディレクトリに全て格納
-            cv2.imwrite(path + '/' + dir + '/' + base +'.jpg', color_img)
-            cv2.imwrite(path + '/' + dir + '/' + base +'.png', depth_img)
-            cv2.imwrite(path + '/' + dir + '/' + base + '_90' +'.jpg', color_img_rotate_90_clockwise)
-            cv2.imwrite(path + '/' + dir + '/' + base + '_90' +'.png', depth_img_rotate_90_clockwise)
-            cv2.imwrite(path + '/' + dir + '/' + base + '_180' +'.jpg', color_img_rotate_180_clockwise)
-            cv2.imwrite(path + '/' + dir + '/' + base + '_180' +'.png', depth_img_rotate_180_clockwise)
-            cv2.imwrite(path + '/' + dir + '/' + base + '_270' +'.jpg', color_img_rotate_270_clockwise)
-            cv2.imwrite(path + '/' + dir + '/' + base + '_270' +'.png', depth_img_rotate_270_clockwise)
-            cv2.imwrite(path + '/' + dir + '/' + base + '_flip_ud' +'.jpg', color_img_flip_ud)
-            cv2.imwrite(path + '/' + dir + '/' + base + '_flip_ud' +'.png', depth_img_flip_ud)
-            cv2.imwrite(path + '/' + dir + '/' + base + '_flip_lr' +'.jpg', color_img_flip_lr)
-            cv2.imwrite(path + '/' + dir + '/' + base + '_flip_lr' +'.png', depth_img_flip_lr)
-            cv2.imwrite(path + '/' + dir + '/' + base + '_flip_udlr' +'.jpg', color_img_flip_udlr)
-            cv2.imwrite(path + '/' + dir + '/' + base + '_flip_udlr' +'.png', depth_img_flip_udlr)
+            if color_img.shape[0]==320 and color_img.shape[1]==320 and depth_img.shape[0]==320 and depth_img.shape[1]==320:
+                cv2.imwrite(path + '/' + dir + '/' + base +'.jpg', color_img)
+                cv2.imwrite(path + '/' + dir + '/' + base +'.png', depth_img)
+            if color_img_rotate_90_clockwise.shape[0]==320 and color_img_rotate_90_clockwise.shape[1]==320 and depth_img_rotate_90_clockwise.shape[0]==320 and depth_img_rotate_90_clockwise.shape[1]==320:
+                cv2.imwrite(path + '/' + dir + '/' + base + '_90' +'.jpg', color_img_rotate_90_clockwise)
+                cv2.imwrite(path + '/' + dir + '/' + base + '_90' +'.png', depth_img_rotate_90_clockwise)
+            if color_img_rotate_180_clockwise.shape[0]==320 and color_img_rotate_180_clockwise.shape[1]==320 and depth_img_rotate_180_clockwise.shape[0]==320 and depth_img_rotate_180_clockwise.shape[1]==320:
+                cv2.imwrite(path + '/' + dir + '/' + base + '_180' +'.jpg', color_img_rotate_180_clockwise)
+                cv2.imwrite(path + '/' + dir + '/' + base + '_180' +'.png', depth_img_rotate_180_clockwise)
+            if color_img_rotate_270_clockwise.shape[0]==320 and color_img_rotate_270_clockwise.shape[1]==320 and depth_img_rotate_270_clockwise.shape[0]==320 and depth_img_rotate_270_clockwise.shape[1]==320:
+                cv2.imwrite(path + '/' + dir + '/' + base + '_270' +'.jpg', color_img_rotate_270_clockwise)
+                cv2.imwrite(path + '/' + dir + '/' + base + '_270' +'.png', depth_img_rotate_270_clockwise)
+            if color_img_flip_ud.shape[0]==320 and color_img_flip_ud.shape[1]==320 and depth_img_flip_ud.shape[0]==320 and depth_img_flip_ud.shape[1]==320:
+                cv2.imwrite(path + '/' + dir + '/' + base + '_flip_ud' +'.jpg', color_img_flip_ud)
+                cv2.imwrite(path + '/' + dir + '/' + base + '_flip_ud' +'.png', depth_img_flip_ud)
+            if color_img_flip_lr.shape[0]==320 and color_img_flip_lr.shape[1]==320 and depth_img_flip_lr.shape[0]==320 and depth_img_flip_lr.shape[1]==320:
+                cv2.imwrite(path + '/' + dir + '/' + base + '_flip_lr' +'.jpg', color_img_flip_lr)
+                cv2.imwrite(path + '/' + dir + '/' + base + '_flip_lr' +'.png', depth_img_flip_lr)
+            if color_img_flip_udlr.shape[0]==320 and color_img_flip_udlr.shape[1]==320 and depth_img_flip_udlr.shape[0]==320 and depth_img_flip_udlr.shape[1]==320:
+                cv2.imwrite(path + '/' + dir + '/' + base + '_flip_udlr' +'.jpg', color_img_flip_udlr)
+                cv2.imwrite(path + '/' + dir + '/' + base + '_flip_udlr' +'.png', depth_img_flip_udlr)
 print('Finished data augmentation!')
