@@ -1,6 +1,6 @@
 # 眼科用内視鏡の深度画像データセット作成
 ## Data Augmentation
-`/eyemodel_train_raw`に保存したRGB画像と深度画像の生のデータセットから下記の画像のアフィン変換を行ったものを`/eyemodel_train_aug`と`/eyemodel_train`に保存。
+`/eyemodel_train_raw`に保存したRGB画像と深度画像の生のデータセットから画像のアフィン変換を行ったものを`/eyemodel_train`に保存。
 ```
 python data_augmentation.py
 ```
